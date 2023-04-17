@@ -10,10 +10,14 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $data = Product::get();
+        $data= Product::select('products.*', 'categories.catName')
+                ->join('categories', 'products.catID', '=', 'categories.catID')
+                ->get();
         return view('index', compact('data'));
     }
-    public function add()
+
+    
+    /*public function add()
     {
         $category = Category::get();
         return view('add', compact('category'));
@@ -54,4 +58,5 @@ class ProductController extends Controller
         return redirect()->back()->with('success', 'Product delete successfully');
 
     }
+    */
 }

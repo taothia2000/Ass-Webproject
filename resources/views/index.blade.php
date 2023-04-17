@@ -1,64 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" dir="ltr">
+  <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ asset('/app.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Latest compiled JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-</head>
-
+   </head>
 <body>
-    <div class="container" style="margin-top: 20px">
-        <div class="row">
-            <div class="col-md-12">
-                <h2> Product list</h2>
-                @if(session::has('success'))
-                <div class="alert alert-success" role="alert">
-                    {{ session::get('success') }}
-                </div>
-                @endif    
-                @endsection)
-                <div style="margin-right: 5%; margin-bottom:20px; float:right";
-                    <a href="{{ url('add') }}" class="btn btn-primary">Add product</a>
-                </div>
-                <table class="table table-hover">
-                    <thead class="table-success">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Product name</th>
-                            <th>Price</th>
-                            <th>Image</th>
-                            <th>Details</th>
-                            <th>Category</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($data as $product)
-                        <tr>
-                            <td>{{$product->productID}}</td>
-                            <td>{{$product->productName}}</td>
-                            <td>{{$product->productPrice}}</td>
-                            <td>{{$product->productImage}}</td>
-                            <td>{{$product->ProductDetails}}</td>
-                            <td>{{$product->catName}}</td>
-                            <td>
-                                <a href="{{ url('edit/' .$product->productID) }}" title="Edit this product"><i class="fa-solid fa-pen-to-square"></i></a> &nbsp;
-                                <a href="#" title="Delete this product" title="Delete this product"><i class="fa-solid fa-trash-can"></i></a>
-                            </td>
-                        </tr>    
-                        @endforeach
-            </div>
-    
+    <style="background-image: url('{{ asset('../public/images/background.jpg')}}')> 
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <img src="{{asset('/img/chocolatefront.jpg') }}" alt="">
+        <div class="text">
+          <span class="text-1">More Chocolate <br> More Fun!</span>
+          <span class="text-2">Let's get chocolate</span>
         </div>
+      </div>
+      <div class="back">
+        <img class="backImg" src="{{ asset('/img/chocolateback.jpg') }}" alt="">
+        <div class="text">
+          <span class="text-1">Come into the Chocoworld <br> with one step</span>
+          <span class="text-2">Let's get started</span>
+        </div>
+      </div>
     </div>
-    
+    <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Login</div>
+          <form action="#">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Enter your email" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Enter your password" required>
+              </div>
+              <div class="text"><a href="#">Forgot password?</a></div>
+              <div class="button input-box">
+                <input type="submit" value="Sumbit">
+              </div>
+              <div class="text sign-up-text">Don't have an account? <label for="flip">Sign up now</label></div>
+            </div>
+        </form>
+      </div>
+        <div class="signup-form">
+          <div class="title">Signup</div>
+        <form action="#">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Enter your name" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Enter your email" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Enter your password" required>
+              </div>
+              <div class="button input-box">
+                <input type="submit" value="Sumbit">
+              </div>
+              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+            </div>
+      </form>
+    </div>
+    </div>
+    </div>
+  </div>
 </body>
 </html>
