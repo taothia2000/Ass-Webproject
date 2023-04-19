@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product;
-use App\Models\Category;
 
 class ProductController extends Controller
 {
+
     public function index()
     {
         $data= Product::select('products.*', 'categories.catName')
@@ -17,7 +16,8 @@ class ProductController extends Controller
     }
 
     
-    /*public function add()
+    /*
+    public function add()
     {
         $category = Category::get();
         return view('add', compact('category'));
@@ -59,4 +59,5 @@ class ProductController extends Controller
 
     }
     */
+
 }
