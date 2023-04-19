@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+
+use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    return view('login&register');
 });
+
+Route::get('index', [ProductController::class,'index']);
+Route::get('admin/admin', [AdminController::class,'login'])->name('login');
+

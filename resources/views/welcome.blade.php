@@ -23,11 +23,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
-
 <body>
-	<header id="header"><!--header-->
-
-		
+	<header id="header"><!--header-->	
 		<div class="header-middle"><!--header-top-->
 			<div class="container">
 				<div class="row">
@@ -539,3 +536,4 @@
     <script src="{{('frontend/js/main.js')}}"></script>
 </body>
 </html>
+
