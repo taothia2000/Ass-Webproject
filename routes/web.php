@@ -13,8 +13,9 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('login&register');
+});
 
 Route::get('index', [ProductController::class,'index']);
+Route::get('admin/admin', [AdminController::class,'login'])->name('login');
