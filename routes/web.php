@@ -1,10 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +15,10 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-// Route::get('/', function () {
 
-//     return view('login&register');
-// });
 
-Route::get('login', [AdminController::class,'login']);
-Route::post('login&register','ProductController@login&register');
+Route::get('index', [ProductController::class,'index']);
+Route::get('admin/login', [AdminController::class, 'login']) -> name('login');
+Route::get('admin/index', [AdminController::class, 'index']) -> name('home');
+
 
