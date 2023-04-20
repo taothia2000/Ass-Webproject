@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ asset('/Frontend/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('customer/Frontend/css/app.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
@@ -11,14 +11,14 @@
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
-        <img src="{{asset('/Frontend/images/chocolatefront.jpg') }}" alt="">
+        <img src="{{asset('customer/Frontend/images/chocolatefront.jpg') }}" alt="">
         <div class="text">
           <span class="text-1">More Chocolate <br> More Fun!</span>
           <span class="text-2">Let's get chocolate</span>
         </div>
       </div>
       <div class="back">
-        <img class="backImg" src="{{ asset('/Frontend/images/chocolateback.jpg') }}" alt="">
+        <img class="backImg" src="{{ asset('customer/Frontend/images/chocolateback.jpg') }}" alt="">
         <div class="text">
           <span class="text-1">Come into the Chocoworld <br> with one step</span>
           <span class="text-2">Let's get started</span>
