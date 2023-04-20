@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
-
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -17,11 +17,11 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
 
-    return view('login&register');
-});
+//     return view('login&register');
+// });
 
-Route::get('index', [ProductController::class,'index']);
-Route::get('admin/admin', [AdminController::class,'login'])->name('login');
+Route::get('login', [AdminController::class,'login']);
+Route::post('login&register','ProductController@login&register');
 
