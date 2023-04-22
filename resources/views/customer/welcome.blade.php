@@ -6,18 +6,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Home | E-Shopper</title>
-    <link href="{{('frontend/css/bootstrap.min.css')}}" rel="stylesheet" >
-    <link href="{{('frontend/css/font-awesome.min.css')}}" rel="stylesheet">
-    <link href="{{('frontend/css/prettyPhoto.css')}}" rel="stylesheet">
-    <link href="{{('frontend/css/price-range.css')}}" rel="stylesheet">
-    <link href="{{('frontend/css/animate.css')}}" rel="stylesheet">
-	<link href="{{('frontend/css/main.css')}}" rel="stylesheet">
-	<link href="{{('frontend/css/responsive.css')}}" rel="stylesheet">
+    <link href="{{('../public/customer/frontend/css/bootstrap.min.css')}}" rel="stylesheet" >
+    <link href="{{('../public/customer/frontend/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{('../public/customer/frontend/css/prettyPhoto.css')}}" rel="stylesheet">
+    <link href="{{('../public/customer/frontend/css/price-range.css')}}" rel="stylesheet">
+    <link href="{{('../public/customer/frontend/css/animate.css')}}" rel="stylesheet">
+	<link href="{{('../public/customer/frontend/css/main.css')}}" rel="stylesheet">
+	<link href="{{('../public/customer/frontend/css/responsive.css')}}" rel="stylesheet">
     <!--[if lt
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="{{('public/frontend/images/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{('../public/customer/frontend/images/favicon.ico')}}">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
@@ -30,7 +30,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="{{('frontend/images/logo.png')}}" alt="" /></a>        <!--Để logo shop-->
+							<a href="index.html"><img src="{{('../public/customer/frontend/images/logo.png')}}" alt="" /></a>        <!--Để logo shop-->
 						</div>
 					</div>
 					<div class="col-sm-8">
@@ -133,106 +133,37 @@
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Sportswear
-										</a>
-									</h4>
-								</div>
-								<div id="sportswear" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="#">Nike </a></li>
-											<li><a href="#">Under Armour </a></li>
-											<li><a href="#">Adidas </a></li>
-											<li><a href="#">Puma</a></li>
-											<li><a href="#">ASICS </a></li>
-										</ul>
-									</div>
+									<h4 class="panel-title"><a href="#">Dark chocolate</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Mens
-										</a>
-									</h4>
-								</div>
-								<div id="mens" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="#">Fendi</a></li>
-											<li><a href="#">Guess</a></li>
-											<li><a href="#">Valentino</a></li>
-											<li><a href="#">Dior</a></li>
-											<li><a href="#">Versace</a></li>
-											<li><a href="#">Armani</a></li>
-											<li><a href="#">Prada</a></li>
-											<li><a href="#">Dolce and Gabbana</a></li>
-											<li><a href="#">Chanel</a></li>
-											<li><a href="#">Gucci</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#womens">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Womens
-										</a>
-									</h4>
-								</div>
-								<div id="womens" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="#">Fendi</a></li>
-											<li><a href="#">Guess</a></li>
-											<li><a href="#">Valentino</a></li>
-											<li><a href="#">Dior</a></li>
-											<li><a href="#">Versace</a></li>
-										</ul>
-									</div>
+									<h4 class="panel-title"><a href="#">White chocolate</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Kids</a></h4>
+									<h4 class="panel-title"><a href="#">Taikayaki</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Fashion</a></h4>
+									<h4 class="panel-title"><a href="#">Waffle</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Households</a></h4>
+									<h4 class="panel-title"><a href="#">Pancake</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Interiors</a></h4>
+									<h4 class="panel-title"><a href="#">Crepe</a></h4>
 								</div>
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Clothing</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Bags</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Shoes</a></h4>
+									<h4 class="panel-title"><a href="#">Cookie pan</a></h4>
 								</div>
 							</div>
 						</div><!--/category-products-->				
@@ -400,7 +331,15 @@
 		</div>
 	</section>
 	
-    
+	<!--pagination-->
+	<ul class="pagination">
+							<li class="active"><a href="">1</a></li>
+							<li><a href="">2</a></li>
+							<li><a href="">3</a></li>
+							<li><a href="">&raquo;</a></li>
+						</ul>
+    <!--/pagination-->
+
 	<footer id="footer"><!--Footer-->
 		<div class="footer-top">
 			<div class="container">
@@ -523,17 +462,14 @@
 				</div>
 			</div>
 		</div>
-		
-
-
 	</footer><!--/Footer-->
 	
-    <script src="{{('frontend/js/jquery.js')}}"></script>
-	<script src="{{('frontend/js/bootstrap.min.js')}}"></script>
-	<script src="{{('frontend/js/jquery.scrollUp.min.js')}}"></script>
-	<script src="{{('frontend/js/price-range.js')}}"></script>
-    <script src="{{('frontend/js/jquery.prettyPhoto.js')}}"></script>
-    <script src="{{('frontend/js/main.js')}}"></script>
+    <script src="{{('../public/customer/frontend/js/jquery.js')}}"></script>
+	<script src="{{('../public/customer/frontend/js/bootstrap.min.js')}}"></script>
+	<script src="{{('../public/customer/frontend/js/jquery.scrollUp.min.js')}}"></script>
+	<script src="{{('../public/customer/frontend/js/price-range.js')}}"></script>
+    <script src="{{('../public/customer/frontend/js/jquery.prettyPhoto.js')}}"></script>
+    <script src="{{('../public/customer/frontend/js/main.js')}}"></script>
 </body>
 </html>
 
