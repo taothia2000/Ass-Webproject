@@ -10,4 +10,9 @@ class ProductController extends Controller
     {
         return view ('customer/welcome');
     }
+
+    public function cart()
+    {
+        return view ('cart');
+    }
 }

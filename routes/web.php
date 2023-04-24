@@ -20,5 +20,7 @@ use App\Http\Controllers\AdminController;
 Route::get('index', [ProductController::class,'index']);
 Route::get('admin/login', [AdminController::class, 'login']) -> name('login');
 Route::get('admin/index', [AdminController::class, 'index']) -> name('home');
+Route::get('cart', [ProductController::class,'cart']) -> name('cart');
+
 
 
