@@ -28,9 +28,9 @@
 		<div class="header-middle"><!--header-top-->
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-4">
+					<div class="col-sm-4"> 
 						<div class="logo pull-left">
-							<a href="index.html"><img src="{{('../public/customer/frontend/images/logo.png')}}" alt="" /></a>        <!--Để logo shop-->
+							<a href="{{('')}}"><img src="{{('../public/customer/frontend/images/logo.jpg')}}" alt="" /></a>        <!--Để logo shop-->
 						</div>
 					</div>
 					<div class="col-sm-8">
@@ -96,19 +96,19 @@
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-6">
-									<img src="{{('frontend/images/girl1.jpg')}}" class="girl img-responsive" alt="" />
+									<img src="{{('../public/customer/frontend/images/girl1.jpg')}}" class="girl img-responsive" alt="" />
 								</div>
 							</div>
 
 							<div class="item">
 								<div class="col-sm-6">
-									<img src="{{('frontend/images/girl2.jpg')}}" class="girl img-responsive" alt="" />
+									<img src="{{('../public/customer/frontend/images/girl2.jpg')}}" class="girl img-responsive" alt="" />
 								</div>
 							</div>
 							
 							<div class="item">
 								<div class="col-sm-6">
-									<img src="{{('frontend/images/girl3.jpg')}}" class="girl img-responsive" alt="" />
+									<img src="{{('../public/customer/frontend/images/girl3.jpg')}}" class="girl img-responsive" alt="" />
 								</div>
 							</div>
 						</div>
@@ -182,13 +182,7 @@
 											<p>Easy Polo Black Edition</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
-										<div class="product-overlay">
-											<div class="overlay-content">
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-										</div>
+
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
@@ -207,13 +201,7 @@
 										<p>Easy Polo Black Edition</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-										</div>
-									</div>
+
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
@@ -232,13 +220,7 @@
 										<p>Easy Polo Black Edition</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-										</div>
-									</div>
+
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
@@ -257,13 +239,7 @@
 										<p>Easy Polo Black Edition</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-										</div>
-									</div>
+
 									<img src="images/home/new.png" class="new" alt="" />
 								</div>
 								<div class="choose">
@@ -283,13 +259,7 @@
 										<p>Easy Polo Black Edition</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-										</div>
-									</div>
+
 									<img src="images/home/sale.png" class="new" alt="" />
 								</div>
 								<div class="choose">
@@ -309,13 +279,7 @@
 										<p>Easy Polo Black Edition</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-										</div>
-									</div>
+
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
