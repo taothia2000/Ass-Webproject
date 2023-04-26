@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-</head><!--/head-->
+	
 <body>
 	<header id="header"><!--header-->	
 		<div class="header-middle"><!--header-top-->
@@ -45,6 +45,7 @@
 				</div>
 			</div>
 		</div><!--/header-top-->
+
 		<div class="header-bottom"><!--header-middle-->
 			<div class="container">
 				<div class="row">
@@ -296,12 +297,12 @@
 	</section>
 	
 	<!--pagination-->
-	<ul class="pagination">
-							<li class="active"><a href="">1</a></li>
-							<li><a href="">2</a></li>
-							<li><a href="">3</a></li>
-							<li><a href="">&raquo;</a></li>
-						</ul>
+		<ul class="pagination">
+				<li class="active"><a href="">1</a></li>
+			<li><a href="">2</a></li>
+			<li><a href="">3</a></li>
+			<li><a href="">&raquo;</a></li>
+		</ul>
     <!--/pagination-->
 
 	<footer id="footer"><!--Footer-->

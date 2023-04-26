@@ -13,6 +13,6 @@ class ProductController extends Controller
 
     public function cart()
     {
-        return view ('cart');
+        return view ('customer/cart');
     }
 }
