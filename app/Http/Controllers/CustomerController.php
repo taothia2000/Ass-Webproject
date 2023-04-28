@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class CustomerController extends Controller
 {
@@ -18,9 +19,9 @@ class CustomerController extends Controller
     
     
         $users = new User();
-        $users->UserName=$REQUEST->name;
-        $users->Email=$REQUEST->email;
-        $users->Password=Hash::make($REQUEST->password);
+        $users->userName=$REQUEST->name;
+        $users->userEmail=$REQUEST->email;
+        $users->userPassword=Hash::make($REQUEST->password);
         $res = $users->save();
         if($res){
             return back()->with('success','You have registered successfully');
@@ -28,17 +29,17 @@ class CustomerController extends Controller
             return back()->with('fail','Something wrong! check it again');
         }
     }
+
+    
     public function loginUser(Request $REQUEST)
     {
-       
-        // $users = User::where('Email','=', $REQUEST->email)->first();
-        $users = User::find($REQUEST->email);
+        $users = User::where('userEmail','=', $REQUEST->email)->first();
         if($users){
-            if(Hash::check($users->Password,$REQUEST->password)){
-                $REQUEST->session()->put('Email',$users->email);
-                $REQUEST->session()->put('Password',$users->password);
+                if(Hash::check($REQUEST->password,$users->userPassword )){
+                $REQUEST->session()->put('Email',$users->userEmail);
                 return redirect('dashboard');
-            }else{
+            }
+            else{
                 return  back()->with('fail','Incorrect password');
             }
         }
