@@ -16,11 +16,17 @@ use App\Http\Controllers\AdminController;
 */
 
 
-
+//HOMEPAGE
 Route::get('index', [ProductController::class,'index']);
+
+//ADMIN
 Route::get('admin/login', [AdminController::class, 'login']) -> name('login');
 Route::get('admin/index', [AdminController::class, 'index']) -> name('home');
+
+//CART
 Route::get('cart', [ProductController::class,'cart']) -> name('cart');
+Route::get('add-to-cart/{productId}', [ProductController::class,'addtocart']);
+Route::delete('add-to-cart/{productId}', [ProductController::class,'delete']);
 
 
 
