@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CustomerController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,7 @@ Route::get('add-to-cart/{productId}', [ProductController::class,'addtocart']);
 Route::delete('add-to-cart/{productId}', [ProductController::class,'delete']);
 
 
-
+Route::get('login', [CustomerController::class,'login']);
+Route::post('register-user',[CustomerController::class,'registerUser'])->name('register-user');
+Route::post('login-user',[CustomerController::class,'loginUser'])->name('login-user');
+Route::get('dashboard',[CustomerController::class,'dashboard']);

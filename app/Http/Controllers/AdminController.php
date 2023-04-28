@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\facades\Session;
@@ -18,4 +18,5 @@ class AdminController extends Controller
         return view ('admin/login&register');
     }
 
+   
 }
