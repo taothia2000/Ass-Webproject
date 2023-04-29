@@ -26,7 +26,7 @@ Route::get('admin/index', [AdminController::class, 'index']) -> name('home');
 //CART
 Route::get('cart', [ProductController::class,'cart']) -> name('cart');
 Route::get('add-to-cart/{productId}', [ProductController::class,'addtocart']);
-Route::delete('add-to-cart/{productId}', [ProductController::class,'delete']);
+Route::delete('delete/{productId}', [ProductController::class,'remove']);
 
 
 

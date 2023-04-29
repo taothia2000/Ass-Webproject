@@ -37,9 +37,11 @@ class ProductController extends Controller
         return redirect() -> back() -> with('success', 'Product added to cart successfully!');
     }
 
-    public function delete()
+    public function remove($id)
     {
-        
+        $products = Product::find($id);
+        $products -> delete();
+        return redirect() -> back() -> with('success', 'Product removed to cart successfully!');
     }
 
 }
