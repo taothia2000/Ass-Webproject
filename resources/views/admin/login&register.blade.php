@@ -29,15 +29,21 @@
         <div class="form-content">
           <div class="login-form">
             <div class="title">Login</div>
-          <form action="#">
+            <form action="{{ route('login-user') }}" method= "POST">
+              @if (Session::has('success'))
+                <div class="alert alert-success">{{ Session::get('success') }}</div>
+            @elseif (Session::has('fail'))
+                <div class="alert alert-danger">{{ Session::get('fail') }}</div>
+            @endif
+              @csrf
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Enter your email" required>
+                <input type="text" name="email" placeholder="Enter your email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password" required>
+                <input type="password" name="password" placeholder="Enter your password" required>
               </div>
               <div class="text"><a href="#">Forgot password?</a></div>
               <div class="button input-box">
@@ -49,19 +55,26 @@
       </div>
         <div class="signup-form">
           <div class="title">Signup</div>
-        <form action="#">
+          <form action="{{ route('register-user') }}" method="POST">
+            @if (Session::has('success'))
+                <div class="alert alert-success">{{ Session::get('success') }}</div>
+            @endif
+            @if (Session::has('fail'))
+                <div class="alert alert-danger">{{ Session::get('fail') }}</div>
+            @endif
+            @csrf
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-user"></i>
-                <input type="text" name="name" placeholder="Enter your name" required>
+                <input type="text" name="name"  placeholder="Enter your name" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" name="email" placeholder="Enter your email" required>
+                <input type="text" name="email"  placeholder="abc@domain.org" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="password" placeholder="Enter your password" required>
+                <input type="password" name="password"  placeholder="Enter your password" required>
               </div>
               <div class="button input-box">
                 <input type="submit" value="Register">
