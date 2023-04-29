@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Cart;
 
 class ProductController extends Controller
 {
@@ -39,16 +40,11 @@ class ProductController extends Controller
     }
 
 
-    public function remove(Request $request)
+    public function delete($id)
     {
-        if($request->id) {
-            $cart = session()->get('cart');
-            if(isset($cart[$request->id])) {
-                unset($cart[$request->id]);
-                session()->put('cart', $cart);
-            }
-            session()->flash('success', 'Product removed successfully');
-        }
+        Cart::remove($id);
+        return redirect() -> back() -> with('success', 'Product added to cart successfully!');
+
     }
 
 
