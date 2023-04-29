@@ -25,7 +25,8 @@ class ProductController extends Controller
         $cart = session() -> get('cart');
 
         //lấy thông tin product đc chọn
-        $cart[$id] = [                             
+        $cart[$id] = [     
+            "id" => $product->productId,                     
             "name" => $product->productName,
             "quantity" => 1,
             "price" => $product->productPrice,
@@ -37,11 +38,13 @@ class ProductController extends Controller
         return redirect() -> back() -> with('success', 'Product added to cart successfully!');
     }
 
+
+    //xoá product trong database
+    /*
     public function remove($id)
     {
-        $products = Product::find($id);
-        $products -> delete();
+        Product::where('productId','=',$id) ->delete();
         return redirect() -> back() -> with('success', 'Product removed to cart successfully!');
     }
-
+    */
 }
