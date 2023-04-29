@@ -39,12 +39,28 @@ class ProductController extends Controller
     }
 
 
+    public function remove(Request $request)
+    {
+        if($request->id) {
+            $cart = session()->get('cart');
+            if(isset($cart[$request->id])) {
+                unset($cart[$request->id]);
+                session()->put('cart', $cart);
+            }
+            session()->flash('success', 'Product removed successfully');
+        }
+    }
+
+
     //xoá product trong database
     /*
-    public function remove($id)
+    public function deleteindatabase($id)
     {
         Product::where('productId','=',$id) ->delete();
         return redirect() -> back() -> with('success', 'Product removed to cart successfully!');
     }
     */
+
+
+
 }
