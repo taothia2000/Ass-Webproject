@@ -133,7 +133,12 @@
 										</td>									
 										<td class="cart_delete">
 
-											<a class="cart_quantity_delete" href=""> <i class="fa fa-times"></i></a>
+											//
+												
+
+											//
+
+											<a class="cart_quantity_delete" href="{{ url('remove-from-cart')}}" method: "DELETE"> <i class="fa fa-times"></i></a>            //xoá product trong database
 										</td>
 									</tr>	
 								@endforeach	
