@@ -11,7 +11,7 @@ class CustomerController extends Controller
 {
     public function login()
     {
-        return view ('login&register');
+        return view ('admin/login&register');
     }
 
     public function registerUser(Request $REQUEST)
@@ -37,7 +37,7 @@ class CustomerController extends Controller
         if($users){
                 if(Hash::check($REQUEST->password,$users->userPassword )){
                 $REQUEST->session()->put('Email',$users->userEmail);
-                return redirect('dashboard');
+                return redirect('index');
             }
             else{
                 return  back()->with('fail','Incorrect password');
@@ -46,10 +46,5 @@ class CustomerController extends Controller
         else{
             return  back()->with('fail','This email is not registered.');
         }
-    }
-    
-    
-    public function dashboard() {
-        return view('welcome');
     }
 }

@@ -40,11 +40,15 @@ class ProductController extends Controller
     }
 
 
-    public function delete($id)
+    public function remove($id)
     {
-        Cart::remove($id);
-        return redirect() -> back() -> with('success', 'Product added to cart successfully!');
-
+        $cart = session()->get('cart');
+    
+        if(isset($cart[$id])) {
+            unset($cart[$id]);
+            session()->put('cart', $cart);
+        }
+        return redirect()->back()->with('success', 'Product removed successfully from cart.');
     }
 
 
