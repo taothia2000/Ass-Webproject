@@ -39,16 +39,15 @@ class ProductController extends Controller
     }
 
 
-    public function remove(Request $request)
+    public function remove($id)
     {
-        if($request->id) {
-            $cart = session()->get('cart');
-            if(isset($cart[$request->id])) {
-                unset($cart[$request->id]);
-                session()->put('cart', $cart);
-            }
-            session()->flash('success', 'Product removed successfully');
+        $cart = session()->get('cart');
+    
+        if(isset($cart[$id])) {
+            unset($cart[$id]);
+            session()->put('cart', $cart);
         }
+        return redirect()->back()->with('success', 'Product removed successfully from cart.');
     }
 
 
