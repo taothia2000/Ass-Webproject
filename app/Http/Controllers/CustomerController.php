@@ -38,6 +38,7 @@ class CustomerController extends Controller
                 if(Hash::check($REQUEST->password,$users->userPassword )){
                 $REQUEST->session()->put('Email',$users->userEmail);
                 return redirect('index');
+                
             }
             else{
                 return  back()->with('fail','Incorrect password');
@@ -46,11 +47,13 @@ class CustomerController extends Controller
         else{
             return  back()->with('fail','This email is not registered.');
         }
+        
     }
     public function logOut(){
         if(Session::has('Email')){
             Session::pull('Email');
-            return redirect('login');
+            return redirect('index');
         }
     }
+    
 }

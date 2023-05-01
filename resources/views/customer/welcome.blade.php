@@ -36,9 +36,15 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="{{url('login')}}"><i class="fa fa-lock"></i> Log in</a></li>
+								<li><a href=""><i class="fa fa-user"></i> Admin</a></li>					
+								<li><a href="{{ route('cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								@if (Session::has('Email'))	
+									<li><a href="{{ route('logOut') }}"><i class="fa fa-lock"></i>Log out</a> </li>
+								@else
+    								<li><a href="{{ route('login') }}"><i class="fa fa-lock"></i>Log in</a> </li>
+								
+								@endif
+								@csrf
 							</ul>
 						</div>
 					</div>
