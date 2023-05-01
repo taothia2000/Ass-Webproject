@@ -129,7 +129,7 @@
 											</div>
 										</td>
 										<td class="cart_total">
-											<p class="cart_total_price">{{ $details['price'] * $details['quantity']}}</p>    
+											<p class="cart_total_price">${{ $details['price'] * $details['quantity']}}</p>    
 										</td>									
 										<td class="cart_delete">
 											<a class="cart_quantity_delete" href="{{ url('cart',  $details['id'])}}"> <i class="fa fa-times"></i></a>          
@@ -153,7 +153,7 @@
 								<ul>
 									<li>Total 
 										<span>
-
+											${{ $total }}	
 										</span>
 									</li>
 								</ul>
