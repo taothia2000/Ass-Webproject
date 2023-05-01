@@ -43,29 +43,29 @@
 
 
         <!-- Sidebar Start -->
-        <div class="sidebar pe-4 pb-3">
-            <nav class="navbar bg-light navbar-light">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"></i>ChocoWorld</h3>
-                </a>
-                <div class="d-flex align-items-center ms-4 mb-4">
-                    <div class="position-relative">
-                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+            <div class="sidebar pe-4 pb-3">
+                <nav class="navbar bg-light navbar-light">
+                    <a href="index.html" class="navbar-brand mx-4 mb-3">
+                        <h3 class="text-primary"></i>ChocoWorld</h3>
+                    </a>
+                    <div class="d-flex align-items-center ms-4 mb-4">
+                        <div class="position-relative">
+                            <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                            <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                        </div>
+                        <div class="ms-3">
+                            <h6 class="mb-0">Jhon Doe</h6>                  <!-- chỗ này lấy thông tin từ table customer -->
+                            <span>Admin</span>
+                        </div>
                     </div>
-                    <div class="ms-3">
-                        <h6 class="mb-0">Jhon Doe</h6>                  <!-- chỗ này lấy thông tin từ table customer -->
-                        <span>Admin</span>
+                    <div class="navbar-nav w-100">
+                        <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Products</a>
+                        <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Orders</a>
+                        <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Thống kê</a>
+                        <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Customers</a>
                     </div>
-                </div>
-                <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Products</a>
-                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Orders</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Thống kê</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Customers</a>
-                </div>
-            </nav>
-        </div>
+                </nav>
+            </div>
         <!-- Sidebar End -->
 
 
@@ -96,169 +96,60 @@
                 </div>
             </nav>
             <!-- Navbar End -->
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Products Table</h4>
 
-
-            <!-- Sale & Revenue Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-line fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Today Sale</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Sale</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-area fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Today Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Sale & Revenue End -->
-
-
-            <!-- Sales Chart Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Worldwide Sales</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="worldwide-sales"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Salse & Revenue</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="salse-revenue"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Sales Chart End -->
-
-
-            <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Recent Salse</h6>
-                        <a href="">Show All</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+                        <table class="table table-striped">
                             <thead>
-                                <tr class="text-dark">
-                                    <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Invoice</th>
-                                    <th scope="col">Customer</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
+                                <tr>
+                                    <th> ID </th>
+                                    <th> Item </th>
+                                    <th> Price </th>
+                                    <th> Image </th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
+                                    <td><?php echo e($product->productId); ?></td>
+                                    <td><?php echo e($product->productName); ?></td>
+                                    <td><?php echo e($product->productPrice); ?></td>
+                                    <td><?php echo e($product->productImg); ?></td>
+                                    <td>
+                                        <a href="#" title="Edit this product"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <a href="#" title="Delete this product"><i class="fa-solid fa-trash-can"></i></a>
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
-            </div>
-            <!-- Recent Sales End -->
+
+            <!-- chỗ ô code
+
+            //dawdadacfa
+            
 
             <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Your Site Name</a>, All Right Reserved. 
-                        </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                        </br>
-                        Distributed By <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                <div class="container-fluid pt-4 px-4">
+                    <div class="bg-light rounded-top p-4">
+                        <div class="row">
+                            <div class="col-12 col-sm-6 text-center text-sm-start">
+                                &copy; <a href="#">Your Site Name</a>, All Right Reserved. 
+                            </div>
+                            <div class="col-12 col-sm-6 text-center text-sm-end">
+                                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                                Designed By <a href="https://htmlcodex.com">HTML Codex</a>
+                            </br>
+                                Distributed By <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             <!-- Footer End -->
-        </div>
+
         <!-- Content End -->
 
 
