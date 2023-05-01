@@ -132,7 +132,7 @@
 											<p class="cart_total_price"><?php echo e($details['price'] * $details['quantity']); ?></p>    
 										</td>									
 										<td class="cart_delete">
-											<a class="cart_quantity_delete" href="" class="text-muted" wire:click.prevent="destroy('<?php echo e($details['id']); ?>')"> <i class="fa fa-times"></i></a>            //xoá product trong database
+											<a class="cart_quantity_delete" href="<?php echo e(url('cart',  $details['id'])); ?>"> <i class="fa fa-times"></i></a>          
 										</td>
 									</tr>	
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>	
