@@ -33,3 +33,4 @@ Route::get('remove-from-cart/{productId}', [ProductController::class,'remove']);
 Route::get('login', [CustomerController::class,'login']);
 Route::post('register-user',[CustomerController::class,'registerUser'])->name('register-user');
 Route::post('login-user',[CustomerController::class,'loginUser'])->name('login-user');
+Route::get('logOut', [CustomerController::class,'logOut']);

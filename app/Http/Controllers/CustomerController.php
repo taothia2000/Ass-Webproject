@@ -47,4 +47,10 @@ class CustomerController extends Controller
             return  back()->with('fail','This email is not registered.');
         }
     }
+    public function logOut(){
+        if(Session::has('Email')){
+            Session::pull('Email');
+            return redirect('login');
+        }
+    }
 }

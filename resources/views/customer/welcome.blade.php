@@ -38,7 +38,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="{{url('login')}}"><i class="fa fa-lock"></i> Log in</a></li>
 							</ul>
 						</div>
 					</div>
