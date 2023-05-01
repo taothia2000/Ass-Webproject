@@ -18,12 +18,14 @@ class ProductController extends Controller
     public function cart()
     {
  
-        //tính total
+        //lấy giá trị của product
         $cart = session()->get('cart');
         $subtotals = [];  
         foreach($cart as $id => $details){
             $subtotals[$id] = $details['price'] * $details['quantity'];
         }
+
+        //tính total từ các subtotal ở trên
         $total = array_sum($subtotals);
 
         //view cart
