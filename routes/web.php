@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -27,9 +28,9 @@ Route::get('admin/index', [AdminController::class, 'index']) -> name('home');
 
 
 //CART
-Route::get('cart', [ProductController::class,'cart']) -> name('cart');
-Route::get('add-to-cart/{productId}', [ProductController::class,'addtocart']);
-Route::get('remove-from-cart/{productId}', [ProductController::class,'remove']);
+Route::get('cart', [CartController::class,'cart']) -> name('cart');
+Route::get('add-to-cart/{id}', [CartController::class,'addtocart']);
+Route::get('cart/{id}', [CartController::class,'remove']) -> name('removefromcart');
 
 //USER
 Route::get('login', [CustomerController::class,'login'])->name('login');

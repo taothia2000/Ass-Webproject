@@ -129,10 +129,10 @@
 											</div>
 										</td>
 										<td class="cart_total">
-											<p class="cart_total_price">{{ $details['price'] * $details['quantity']}}</p>    
+											<p class="cart_total_price">${{ $details['price'] * $details['quantity']}}</p>    
 										</td>									
 										<td class="cart_delete">
-											<a class="cart_quantity_delete" href="" class="text-muted" wire:click.prevent="destroy('{{$details['id']}}')"> <i class="fa fa-times"></i></a>            //xoá product trong database
+											<a class="cart_quantity_delete" href="{{ url('cart',  $details['id'])}}"> <i class="fa fa-times"></i></a>          
 										</td>
 									</tr>	
 								@endforeach	
@@ -153,7 +153,7 @@
 								<ul>
 									<li>Total 
 										<span>
-
+											${{ $total }}	
 										</span>
 									</li>
 								</ul>

@@ -21,7 +21,20 @@ class ProductController extends Controller
 
     public function cart()
     {
-        return view ('customer/cart');
+ 
+        //lấy giá trị của product
+        $cart = session()->get('cart');
+        $subtotals = [];  
+        foreach($cart as $id => $details){
+            $subtotals[$id] = $details['price'] * $details['quantity'];
+        }
+
+        //tính total từ các subtotal ở trên
+        $total = array_sum($subtotals);
+
+        //view cart
+        return view ('customer/cart', compact('subtotals', 'total'));
+
     }
 
     public function addtocart($id)
@@ -29,7 +42,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         $cart = session() -> get('cart');
 
-        //lấy thông tin product đc chọn
+        //lưu thông tin product 
         $cart[$id] = [     
             "id" => $product->productId,                     
             "name" => $product->productName,
@@ -44,22 +57,16 @@ class ProductController extends Controller
     }
 
 
-    public function delete($id)
+    public function remove($id)
     {
-        Cart::remove($id);
-        return redirect() -> back() -> with('success', 'Product added to cart successfully!');
-
+        $cart = session()->get('cart');
+    
+        if(isset($cart[$id])) {
+            unset($cart[$id]);
+            session()->put('cart', $cart);
+        }
+        return redirect()->back()->with('success', 'Product removed successfully from cart.');
     }
-
-
-    //xoá product trong database
-    /*
-    public function deleteindatabase($id)
-    {
-        Product::where('productId','=',$id) ->delete();
-        return redirect() -> back() -> with('success', 'Product removed to cart successfully!');
-    }
-    */
 
 
 
