@@ -24,11 +24,8 @@ Route::get('index', [ProductController::class,'index']) -> name('home');
 
 //ADMIN
 Route::get('admin/index', [AdminController::class, 'index']) -> name('home');
-Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
-    Route::get('index',[AdminController::class, 'index'])->name('admin.index');
-    Route::get('profile',[AdminController::class, 'profile'])->name('admin.profile');
-    Route::get('settings',[AdminController::class, 'settings'])->name('admin.settings');
-});
+
+
 
 //CART
 Route::get('cart', [CartController::class,'cart']) -> name('cart');
