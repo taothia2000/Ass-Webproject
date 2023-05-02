@@ -35,10 +35,12 @@
 					</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
-							<ul class="nav navbar-nav">				
+							<ul class="nav navbar-nav">	
+								
 								<li><a href="<?php echo e(route('cart')); ?>"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								
 								<?php if(Session::has('Email')): ?>
-								<li><a href="<?php echo e(route('home')); ?>">Welcome, <?php echo e(Session::get('Email')); ?></a></li>
+								<li><a href="<?php echo e(route('home')); ?>">Welcome, <?php echo e(Session::get('Name')); ?></a></li>
 								<?php endif; ?>								
 								<?php if(Session::has('Email')): ?>	
 									<li><a href="<?php echo e(route('logOut')); ?>"><i class="fa fa-lock"></i>Log out</a> </li>

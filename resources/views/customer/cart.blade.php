@@ -30,7 +30,7 @@
 				<div class="row">
 					<div class="col-sm-4"> 
 						<div class="logo pull-left">
-							<a href="{{('')}}"><img src="{{('../public/customer/frontend/images/logo.jpg')}}" alt="" /></a>        <!--Để logo shop-->
+							<a href="{{('index')}}"><img src="{{('../public/customer/frontend/images/logo.jpg')}}" alt="" /></a>        <!--Để logo shop-->
 						</div>
 					</div>
 					<div class="col-sm-8">
@@ -67,7 +67,7 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="{{('')}}" class="active">Home</a></li>
+								<li><a href="{{('index')}}" class="active">Home</a></li>
 								<li class="dropdown"><a href="#">Products<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html">White chocolate</a></li>
