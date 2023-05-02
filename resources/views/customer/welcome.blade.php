@@ -35,10 +35,12 @@
 					</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
-							<ul class="nav navbar-nav">				
+							<ul class="nav navbar-nav">	
+								{{-- //link to cart			 --}}
 								<li><a href="{{ route('cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								{{-- //Login && LogOut			 --}}
 								@if(Session::has('Email'))
-								<li><a href="{{ route('home') }}">Welcome, {{ Session::get('Email') }}</a></li>
+								<li><a href="{{ route('home') }}">Welcome, {{ Session::get('Name') }}</a></li>
 								@endif								
 								@if (Session::has('Email'))	
 									<li><a href="{{ route('logOut') }}"><i class="fa fa-lock"></i>Log out</a> </li>

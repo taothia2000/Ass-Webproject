@@ -24,7 +24,7 @@
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 	
 <body>
-    <header id="header"><!--header-->	
+	<header id="header"><!--header-->	
 		<div class="header-middle"><!--header-top-->
 			<div class="container">
 				<div class="row">
@@ -35,10 +35,17 @@
 					</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
-							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+							<ul class="nav navbar-nav">				
+								@if(Session::has('Email'))
+								<li><a href="{{ route('home') }}">Welcome, {{ Session::get('Name') }}</a></li>
+								@endif								
+								@if (Session::has('Email'))	
+									<li><a href="{{ route('logOut') }}"><i class="fa fa-lock"></i>Log out</a> </li>
+								@else
+    								<li><a href="{{ route('login') }}"><i class="fa fa-lock"></i>Log in</a> </li>
+								
+								@endif
+								@csrf
 							</ul>
 						</div>
 					</div>
