@@ -36,9 +36,18 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href=""><i class="fa fa-user"></i> Admin</a></li>					
+								<li><a href="<?php echo e(route('cart')); ?>"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<?php if(Session::has('Email')): ?>
+								<li><a href="<?php echo e(route('home')); ?>">Welcome, <?php echo e(Session::get('Email')); ?></a></li>
+								<?php endif; ?>								
+								<?php if(Session::has('Email')): ?>	
+									<li><a href="<?php echo e(route('logOut')); ?>"><i class="fa fa-lock"></i>Log out</a> </li>
+								<?php else: ?>
+    								<li><a href="<?php echo e(route('login')); ?>"><i class="fa fa-lock"></i>Log in</a> </li>
+								
+								<?php endif; ?>
+								<?php echo csrf_field(); ?>
 							</ul>
 						</div>
 					</div>

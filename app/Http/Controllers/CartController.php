@@ -57,4 +57,22 @@ class CartController extends Controller
         return redirect()->back()->with('success', 'Product removed successfully from cart.');
     }
 
+
+    public function checkout(Request $request)
+    {
+        $cart = session()->get('cart');
+
+        foreach($cart as $id => $details){
+            $order = new Order();
+            $order->productId = $id;
+            $order->quantity = $details['quantity'];
+            $order->save();
+        }
+    
+        session()->forget('cart');
+    
+        return redirect()->route('cart.index')->with('success', 'Your order has been placed!');
+    }
+
+
 }
