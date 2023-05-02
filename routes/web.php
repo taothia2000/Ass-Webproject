@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,18 +20,23 @@ use App\Http\Controllers\CartController;
 
 
 //HOMEPAGE
-Route::get('index', [ProductController::class,'index']);
+Route::get('index', [ProductController::class,'index']) -> name('home');
 
 //ADMIN
-Route::get('admin/login', [AdminController::class, 'login']) -> name('login');
 Route::get('admin/index', [AdminController::class, 'index']) -> name('home');
+Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
+    Route::get('index',[AdminController::class, 'index'])->name('admin.index');
+    Route::get('profile',[AdminController::class, 'profile'])->name('admin.profile');
+    Route::get('settings',[AdminController::class, 'settings'])->name('admin.settings');
+});
 
 //CART
 Route::get('cart', [CartController::class,'cart']) -> name('cart');
 Route::get('add-to-cart/{id}', [CartController::class,'addtocart']);
 Route::get('cart/{id}', [CartController::class,'remove']) -> name('removefromcart');
 
-
-Route::get('login', [CustomerController::class,'login']);
+//USER
+Route::get('login', [CustomerController::class,'login'])->name('login');
 Route::post('register-user',[CustomerController::class,'registerUser'])->name('register-user');
 Route::post('login-user',[CustomerController::class,'loginUser'])->name('login-user');
+Route::get('logOut', [CustomerController::class,'logOut'])->name('logOut');

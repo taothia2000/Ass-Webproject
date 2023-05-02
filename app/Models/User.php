@@ -9,5 +9,5 @@ class User extends Model
 {
     use HasFactory;
     public $timestamps =false;
-    protected $primaryKey ="UserID";
+    protected $primaryKey ="userID";
 }
