@@ -37,7 +37,7 @@
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">				
 								@if(Session::has('Email'))
-								<li><a href="{{ route('home') }}">Welcome, {{ Session::get('Email') }}</a></li>
+								<li><a href="{{ route('home') }}">Welcome, {{ Session::get('Name') }}</a></li>
 								@endif								
 								@if (Session::has('Email'))	
 									<li><a href="{{ route('logOut') }}"><i class="fa fa-lock"></i>Log out</a> </li>
