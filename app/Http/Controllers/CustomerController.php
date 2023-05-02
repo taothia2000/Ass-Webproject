@@ -36,6 +36,7 @@ class CustomerController extends Controller
         $users = User::where('userEmail','=', $REQUEST->email)->first();
         if($users){
                 if(Hash::check($REQUEST->password,$users->userPassword )){
+                $REQUEST->session()->put('Name',$users->userName);
                 $REQUEST->session()->put('Email',$users->userEmail);
                 return redirect('index');
                 

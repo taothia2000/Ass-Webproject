@@ -38,6 +38,9 @@
 							<ul class="nav navbar-nav">
 								<li><a href=""><i class="fa fa-user"></i> Admin</a></li>					
 								<li><a href="{{ route('cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								@if(Session::has('Email'))
+								<li><a href="{{ route('home') }}">Welcome, {{ Session::get('Email') }}</a></li>
+								@endif								
 								@if (Session::has('Email'))	
 									<li><a href="{{ route('logOut') }}"><i class="fa fa-lock"></i>Log out</a> </li>
 								@else
