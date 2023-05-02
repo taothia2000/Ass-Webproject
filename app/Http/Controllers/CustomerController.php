@@ -17,10 +17,11 @@ class CustomerController extends Controller
     public function registerUser(Request $REQUEST)
     {
     
-    
+        $role = $REQUEST->input('role');   
         $users = new User();
         $users->userName=$REQUEST->name;
         $users->userEmail=$REQUEST->email;
+        $users->role=$role=1;
         $users->userPassword=Hash::make($REQUEST->password);
         $res = $users->save();
         if($res){
@@ -34,7 +35,7 @@ class CustomerController extends Controller
     public function loginUser(Request $REQUEST)
     {
         $users = User::where('userEmail','=', $REQUEST->email)->first();
-        if($users){
+        if($users->role ==1){
                 if(Hash::check($REQUEST->password,$users->userPassword )){
                 $REQUEST->session()->put('Name',$users->userName);
                 $REQUEST->session()->put('Email',$users->userEmail);
@@ -44,6 +45,9 @@ class CustomerController extends Controller
             else{
                 return  back()->with('fail','Incorrect password');
             }
+        }
+        elseif($users->role ==2){
+            return redirect('admin/index');
         }
         else{
             return  back()->with('fail','This email is not registered.');
