@@ -31,6 +31,7 @@ Route::get('admin/index', [AdminController::class, 'index']) -> name('home');
 Route::get('cart', [CartController::class,'cart']) -> name('cart');
 Route::get('add-to-cart/{id}', [CartController::class,'addtocart']);
 Route::get('cart/{id}', [CartController::class,'remove']) -> name('removefromcart');
+Route::post('cart', [CartController::class,'checkout']) -> name('checkout');
 
 //USER
 Route::get('login', [CustomerController::class,'login'])->name('login');

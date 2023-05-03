@@ -99,7 +99,6 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Products Table</h4>
-
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -112,17 +111,19 @@
                             <tbody>
                                 @foreach ($products as $product)
                                 <tr>
-                                    <td>{{$product->productId}}</td>
-                                    <td>{{$product->productName}}</td>
-                                    <td>{{$product->productPrice}}</td>
-                                    <td>{{$product->productImg}}</td>
-                                    <td>
-                                        <a href="#" title="Edit this product"><i class="fa-solid fa-pen-to-square"></i></a>
-                                        <a href="#" title="Delete this product"><i class="fa-solid fa-trash-can"></i></a>
-                                    </td>
+
+                                        <td> {{$product->productId}}</td>
+                                        <td> {{$product->productName}}</td>
+                                        <td> {{$product->productPrice}}</td>
+                                        <td> {{$product->productImg}}</td>
+                                        <td><input type="submit" class="btn btn-outline-danger rounded-pill" value="Update"></td>
+                                        <td><input type="submit" class="btn btn-outline-danger rounded-pill" value="Delete"></td>
+                                            <a href="#" title="Edit this product"><i class="fa-solid fa-pen-to-square"></i></a>
+                                            <a href="#" title="Delete this product"><i class="fa-solid fa-trash-can"></i></a>
+
                                 </tr>
                                 @endforeach
-                            </tbody>
+                            </tbody>                                   
                         </table>
                     </div>
                 </div>

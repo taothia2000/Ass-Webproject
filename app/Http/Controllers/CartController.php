@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Cart;
+use App\Models\Order_Detail;
 
 class CartController extends Controller
 {
@@ -63,15 +64,15 @@ class CartController extends Controller
         $cart = session()->get('cart');
 
         foreach($cart as $id => $details){
-            $order = new Order();
-            $order->productId = $id;
-            $order->quantity = $details['quantity'];
-            $order->save();
+            $Order_Detail = new Order_Detail();
+            $Order_Detail->productId = $id;
+            $Order_Detail->quantity = $details['quantity'];
+            $Order_Detail->save();
         }
     
         session()->forget('cart');
     
-        return redirect()->route('cart.index')->with('success', 'Your order has been placed!');
+        return redirect()->route('cart')->with('success', 'Your order has been placed!');
     }
 
 

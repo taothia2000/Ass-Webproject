@@ -164,8 +164,11 @@
 										</span>
 									</li>
 								</ul>
-									<a class="btn btn-default update" href="">Update</a>
-									<a class="btn btn-default check_out" href="">Buy now</a>
+								<a class="btn btn-default update" href="">Update</a>
+								<form action="{{route('checkout')}}" method="post">
+									@csrf
+									<button type="submit" class="btn btn-default check_out" href="">Buy now</button>
+								</form>
 							</div>
 						</div>
 					</div>
