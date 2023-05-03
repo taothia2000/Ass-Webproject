@@ -192,7 +192,7 @@
 										<div class="productinfo text-center">
 											<img src="<?php echo e($product->productImg); ?>" width = "200" alt="">
 											<h2><?php echo e($product->productName); ?></h2>
-											<p><?php echo e($product->productPrice); ?></p>
+											<p>$<?php echo e($product->productPrice); ?></p>
 											<a href="<?php echo e(url('add-to-cart/' .$product->productId)); ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>										
 								</div>
@@ -226,7 +226,7 @@
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="companyinfo">
-							<h2><span>e</span>-shopper</h2>
+							<h2><span>C</span>-hoco World</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
 						</div>
 					</div>

@@ -126,7 +126,7 @@
 											<h4><a href="">{{ $details['name']}}</a></h4>
 										</td>
 										<td class="cart_price">
-											<p>{{ $details['price']}}</p>
+											<p>${{ $details['price']}}</p>
 										</td>
 										<td class="cart_quantity">
 											<div class="cart_quantity_button">
@@ -155,7 +155,6 @@
 					<div class="row">
 						<div class="col-sm-6">
 						</div>
-						@foreach($products as $product)
 						<div class="col-sm-6">
 							<div class="total_area">
 								<ul>
@@ -165,13 +164,12 @@
 										</span>
 									</li>
 								</ul>
-								<form action="{{url('checkout/'.$product->productId)}}">
+								<form action="">
 									@csrf
 									<button type="submit" class="btn btn-default check_out" href="">Buy now</button>
 								</form>
 							</div>
 						</div>
-						@endforeach
 					</div>
 				</div>
 			</section><!--/#do_action-->
@@ -182,7 +180,7 @@
 						<div class="row">
 							<div class="col-sm-2">
 								<div class="companyinfo">
-									<h2><span>e</span>-shopper</h2>
+									<h2><span>C</span>-ho World</h2>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
 								</div>
 							</div>
