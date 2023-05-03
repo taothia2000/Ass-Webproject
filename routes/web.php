@@ -23,9 +23,9 @@ use Illuminate\Support\Facades\Auth;
 Route::get('index', [ProductController::class,'index']) -> name('home');
 
 //ADMIN
-Route::get('admin/index', [AdminController::class, 'index']) -> name('home');
-
-
+Route::get('admin/index', [AdminController::class, 'index']) -> name('adminIndex');
+Route::get('adminPage', [AdminController::class, 'adminPage']) -> name('adminPage');
+Route::get('logOut', [AdminController::class,'logOut'])->name('logOut');
 
 //CART
 Route::get('cart', [CartController::class,'cart']) -> name('cart');

@@ -47,7 +47,9 @@ class CustomerController extends Controller
             }
         }
         elseif($users->role ==2){
-            return redirect('admin/index');
+            $REQUEST->session()->put('Name',$users->userName);
+            $REQUEST->session()->put('Email',$users->userEmail);
+            return redirect('adminPage');
         }
         else{
             return  back()->with('fail','This email is not registered.');

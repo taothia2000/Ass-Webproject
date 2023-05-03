@@ -15,10 +15,21 @@ class AdminController extends Controller
         return view ('admin/index', compact('products'));
     }
 
-    public function login()
+    public function adminPage()
     {
-        return view ('admin/login&register');
+        $products = Product::all();
+        $data = array();
+        if(Session::has('Email')){
+            $data = User::where('userEmail','=', Session::get('Email'))->first();
+        }
+        return view ('admin/welcome', compact('products','data'));
     }
 
+    public function logOut(){
+        if(Session::has('Email')){
+            Session::pull('Email');
+            return redirect('index');
+        }
+    }
    
 }
