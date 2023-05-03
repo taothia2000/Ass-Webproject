@@ -16,7 +16,9 @@ class AdminController extends Controller
         return view ('admin/index', compact('products'), compact('users'));
     }
 
+
     public function adminPage()
+
     {
 
         $products = Product::all();
@@ -32,6 +34,18 @@ class AdminController extends Controller
             Session::pull('Email');
             return redirect('index');
         }
+    }
+    public function edit()
+    {
+        $products = Product::all();
+        return view ('admin/edit', compact('products'));
+    }
+
+
+    public function delete()
+    {
+        $products = Product::all();
+        return view ('admin/index', compact('products'));
     }
    
 }

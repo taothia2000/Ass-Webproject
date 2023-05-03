@@ -26,10 +26,14 @@ Route::get('index', [ProductController::class,'index']) -> name('home');
 Route::get('admin/index', [AdminController::class, 'index']) -> name('adminIndex');
 Route::get('adminPage', [AdminController::class, 'adminPage']) -> name('adminPage');
 Route::get('logOut', [AdminController::class,'logOut'])->name('logOut');
+Route::get('admin/delete', [AdminController::class, 'index']) -> name('delete');
+Route::get('edit', [AdminController::class, 'edit']) -> name('edit');
+
 //CART
 Route::get('cart', [CartController::class,'cart']) -> name('cart');
 Route::get('add-to-cart/{id}', [CartController::class,'addtocart']);
 Route::get('cart/{id}', [CartController::class,'remove']) -> name('removefromcart');
+Route::get('checkout/{id}', [CartController::class,'checkout']) -> name('checkout');
 
 //USER
 Route::get('login', [CustomerController::class,'login'])->name('login');

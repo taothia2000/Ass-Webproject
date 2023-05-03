@@ -30,7 +30,7 @@
 				<div class="row">
 					<div class="col-sm-4"> 
 						<div class="logo pull-left">
-							<a href="{{('')}}"><img src="{{('../public/customer/frontend/images/logo.jpg')}}" alt="" /></a>        <!--Để logo shop-->
+							<a href="{{('index')}}"><img src="{{('../public/customer/frontend/images/logo.jpg')}}" alt="" /></a>        <!--Để logo shop-->
 						</div>
 					</div>
 					<div class="col-sm-8">
@@ -67,7 +67,7 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="{{('')}}" class="active">Home</a></li>
+								<li><a href="{{('index')}}" class="active">Home</a></li>
 								<li class="dropdown"><a href="#">Products<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html">White chocolate</a></li>
@@ -155,6 +155,7 @@
 					<div class="row">
 						<div class="col-sm-6">
 						</div>
+						@foreach($products as $product)
 						<div class="col-sm-6">
 							<div class="total_area">
 								<ul>
@@ -164,10 +165,13 @@
 										</span>
 									</li>
 								</ul>
-									<a class="btn btn-default update" href="">Update</a>
-									<a class="btn btn-default check_out" href="">Buy now</a>
+								<form action="{{url('checkout/'.$product->productId)}}">
+									@csrf
+									<button type="submit" class="btn btn-default check_out" href="">Buy now</button>
+								</form>
 							</div>
 						</div>
+						@endforeach
 					</div>
 				</div>
 			</section><!--/#do_action-->

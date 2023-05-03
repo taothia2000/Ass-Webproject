@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Cart;
+use App\Models\User;
+use App\Models\Orders;
+use App\Models\Order_Detail;
 
 class CartController extends Controller
 {
     public function cart()
     {
- 
+        $products = Product::all();
+
         //lấy giá trị của product
         $cart = session()->get('cart');
         $subtotals = [];  
@@ -22,7 +27,7 @@ class CartController extends Controller
         $total = array_sum($subtotals);
 
         //view cart
-        return view ('customer/cart', compact('subtotals', 'total'));
+        return view ('customer/cart', compact('subtotals', 'total', 'products'));
 
     }
 
@@ -40,7 +45,7 @@ class CartController extends Controller
             "img" => $product->productImg,
         ];
 
-        //đưa product vào giỏ hàng
+        //đưa product vào session
         session() -> put('cart', $cart);      
         return redirect() -> back() -> with('success', 'Product added to cart successfully!');
     }
@@ -59,20 +64,26 @@ class CartController extends Controller
 
 
     public function checkout(Request $request)
-    {
-        $cart = session()->get('cart');
+    { 
 
-        foreach($cart as $id => $details){
-            $order = new Order();
-            $order->productId = $id;
-            $order->quantity = $details['quantity'];
-            $order->save();
-        }
-    
-        session()->forget('cart');
-    
-        return redirect()->route('cart.index')->with('success', 'Your order has been placed!');
+        $products = Product::all();
+        $productId = $request->input('productId');
+
+        // Insert product and cart information into the 'orders' table
+        $product = DB::table('products')->find($productId); // Replace 'products' table name with your own
+
+      
+        DB::table('order_detail')->insert(
+            [
+                'productName' => $product->productName
+
+            ]
+        );
+        return view ('cart',compact('products')); 
     }
 
 
+
+
+    
 }
