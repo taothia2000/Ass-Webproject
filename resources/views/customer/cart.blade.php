@@ -155,6 +155,7 @@
 					<div class="row">
 						<div class="col-sm-6">
 						</div>
+						@foreach($products as $product)
 						<div class="col-sm-6">
 							<div class="total_area">
 								<ul>
@@ -164,13 +165,13 @@
 										</span>
 									</li>
 								</ul>
-								<a class="btn btn-default update" href="">Update</a>
-								<form action="{{route('checkout')}}" method="post">
+								<form action="{{url('checkout/'.$product->productId)}}">
 									@csrf
 									<button type="submit" class="btn btn-default check_out" href="">Buy now</button>
 								</form>
 							</div>
 						</div>
+						@endforeach
 					</div>
 				</div>
 			</section><!--/#do_action-->

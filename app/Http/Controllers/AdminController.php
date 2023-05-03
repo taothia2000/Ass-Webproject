@@ -15,10 +15,24 @@ class AdminController extends Controller
         return view ('admin/index', compact('products'));
     }
 
+
     public function login()
     {
         return view ('admin/login&register');
     }
 
+
+    public function edit()
+    {
+        $products = Product::all();
+        return view ('admin/edit', compact('products'));
+    }
+
+
+    public function delete()
+    {
+        $products = Product::all();
+        return view ('admin/index', compact('products'));
+    }
    
 }

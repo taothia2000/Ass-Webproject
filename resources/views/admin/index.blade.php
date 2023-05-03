@@ -116,11 +116,10 @@
                                         <td> {{$product->productName}}</td>
                                         <td> {{$product->productPrice}}</td>
                                         <td> {{$product->productImg}}</td>
-                                        <td><input type="submit" class="btn btn-outline-danger rounded-pill" value="Update"></td>
-                                        <td><input type="submit" class="btn btn-outline-danger rounded-pill" value="Delete"></td>
-                                            <a href="#" title="Edit this product"><i class="fa-solid fa-pen-to-square"></i></a>
-                                            <a href="#" title="Delete this product"><i class="fa-solid fa-trash-can"></i></a>
-
+                                        <td>
+                                            <a href="{{url('edit')}}"  class="btn btn-outline-danger rounded-pill" value="Update" title="Edit this product"></i>Edit</a> &nbsp;
+                                            <a href="{{url('delete/'.$product->productId)}}" class="btn btn-outline-danger rounded-pill" value="Delete" title="Delete this product"><i class="fa-solid fa-trash-can">Delete</i></a>
+                                        </td>
                                 </tr>
                                 @endforeach
                             </tbody>                                   
@@ -128,9 +127,8 @@
                     </div>
                 </div>
 
-            <!-- chỗ ô code
 
-            //dawdadacfa
+  
             
 
             <!-- Footer Start -->
