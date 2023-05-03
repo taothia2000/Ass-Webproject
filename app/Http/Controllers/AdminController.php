@@ -11,12 +11,14 @@ class AdminController extends Controller
 {
     public function index()
     {
+        $users = User::all();
         $products = Product::all();
-        return view ('admin/index', compact('products'));
+        return view ('admin/index', compact('products'), compact('users'));
     }
 
     public function adminPage()
     {
+
         $products = Product::all();
         $data = array();
         if(Session::has('Email')){

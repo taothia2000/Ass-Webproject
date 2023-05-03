@@ -45,7 +45,7 @@
         <!-- Sidebar Start -->
             <div class="sidebar pe-4 pb-3">
                 <nav class="navbar bg-light navbar-light">
-                    <a href="index.html" class="navbar-brand mx-4 mb-3">
+                    <a href="{{ route('adminPage') }}" class="navbar-brand mx-4 mb-3">
                         <h3 class="text-primary"></i>ChocoWorld</h3>
                     </a>
                     <div class="d-flex align-items-center ms-4 mb-4">
@@ -54,19 +54,19 @@
                             <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                         </div>
                         <div class="ms-3">
-                            <h6 class="mb-0"><a href="">{{ Session::get('Name') }}</a></h6>  <!-- chỗ này lấy thông tin từ table customer -->
+                            <h6 class="mb-0"><a>{{ Session::get('Name') }}</a></h6>  <!-- chỗ này lấy thông tin từ table customer -->
                             <span>Admin</span>
                         </div>
                     </div>
                     <div class="navbar-nav w-100">
                         <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Products</a>
                         <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Orders</a>
-                        <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Thống kê</a>
                         <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Customers</a>
                     </div>
                 </nav>
             </div>
         <!-- Sidebar End -->
+
 
 
         <!-- Content Start -->
@@ -87,10 +87,10 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">John Doe</span>
+                            <span class="d-none d-lg-inline-flex">{{ Session::get('Name') }}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <a href="{{ route('logOut') }}" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
@@ -98,24 +98,26 @@
             <!-- Navbar End -->
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Products Table</h4>
+                        <h4 class="card-title">Customers Table</h4>
 
                         <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th> ID </th>
-                                    <th> Item </th>
-                                    <th> Price </th>
-                                    <th> Image </th>
+                                    <th> name </th>
+                                    <th> Email </th>
+                                    <th> Role </th>
+                                    <th> Password</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($products as $product)
+                                @foreach ($users as $user)
                                 <tr>
-                                    <td>{{$product->productId}}</td>
-                                    <td>{{$product->productName}}</td>
-                                    <td>{{$product->productPrice}}</td>
-                                    <td>{{$product->productImg}}</td>
+                                    <td>{{$user->userID}}</td>
+                                    <td>{{$user->userName}}</td>
+                                    <td>{{$user->userEmail}}</td>
+                                    <td>{{$user->role}}</td>
+                                    <td>{{$user->userPassword}}</td>
                                     <td>
                                         <a href="#" title="Edit this product"><i class="fa-solid fa-pen-to-square"></i></a>
                                         <a href="#" title="Delete this product"><i class="fa-solid fa-trash-can"></i></a>
