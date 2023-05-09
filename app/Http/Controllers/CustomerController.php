@@ -14,6 +14,7 @@ class CustomerController extends Controller
         return view ('admin/login&register');
     }
 
+    // RegisterController
     public function registerUser(Request $REQUEST)
     {
     
@@ -31,7 +32,7 @@ class CustomerController extends Controller
         }
     }
 
-    
+    // LoginController
     public function loginUser(Request $REQUEST)
     {
         $users = User::where('userEmail','=', $REQUEST->email)->first();

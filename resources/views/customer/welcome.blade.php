@@ -40,7 +40,7 @@
 								<li><a href="{{ route('cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								{{-- //Login && LogOut			 --}}
 								@if(Session::has('Email'))
-								<li><a href="">Welcome, {{ Session::get('Name') }}</a></li>
+								<li><a>Welcome, {{ Session::get('Name') }}</a></li>
 								@endif								
 								@if (Session::has('Email'))	
 									<li><a href="{{ route('logOut') }}"><i class="fa fa-lock"></i>Log out</a> </li>

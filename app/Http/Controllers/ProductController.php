@@ -19,5 +19,5 @@ class ProductController extends Controller
         return view ('customer/welcome', compact('products','data'));
     }
 
-
+    
 }
