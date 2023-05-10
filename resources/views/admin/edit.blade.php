@@ -19,7 +19,7 @@
             </div>
         @endif
 
-        <form action="{{url('update')}}" method="POST">
+        <form action="{{route('update')}}" method="POST">
             @csrf
           <div class="mb-3 mt-3">
             <label for="id">Product ID:</label>
@@ -42,23 +42,9 @@
             <input type ="text" class ="form-control" id ="old_image" name ="old_image"
                 value = "{{$data->productImg}}">
           </div>
-          <!-- <div class="mb-3 mt-3">
-            <label for="details">Details:</label>
-            <textarea class="form-control" rows="5" id="details" name="details"></textarea>
-          </div>
-          <div class="mb-3 mt-3">
-            <label for="category">Category:</label>
-            <select name="category" id="category">
 
-                @foreach ($category as $categories)
-                <option value ="{{$categories->catID}}"
-                    {{$categories->catID == $data->catID ? 'selected' : ''}}>
-                    {{$categories->catName}}</option>
-                @endforeach
-            </select>
-          </div> -->
-
-          <a href="{{url('index')}}" class="btn btn-danger"> Back </a>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <a href="{{url('admin/index')}}" class="btn btn-danger"> Back </a>
         </form>
       </div>
 </body> 

@@ -71,7 +71,7 @@ class AdminController extends Controller
         
         $data = Product::where('productId','=',$id)->first();
         $products = Product::get();
-        return view('admin/edit',compact('products'));
+        return view('admin/edit',compact('data','products'));
         
     }
 

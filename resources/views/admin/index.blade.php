@@ -108,9 +108,8 @@
                                 <tr>
                                     <th> ID </th>
                                     <th> name </th>
-                                    <th> Email </th>
-                                    <th> Role </th>
-                                    <th> Password</th>
+                                    <th> Price </th>
+                                    <th> Image </th>
                                 </tr>
                             </thead>
                             <tbody>
