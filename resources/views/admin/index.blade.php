@@ -61,7 +61,6 @@
                     <div class="navbar-nav w-100">
                         <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Products</a>
                         <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Orders</a>
-                        <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Thống kê</a>
                         <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Customers</a>
                     </div>
                 </nav>
@@ -99,6 +98,8 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Products Table</h4>
+                        <a type="submit" href="{{ url('admin/add')}}" class="btn btn-default add-to-cart"></i>Add product</a>
+
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -110,19 +111,18 @@
                             </thead>
                             <tbody>
                                 @foreach ($products as $product)
-                                <tr>
-
-                                        <td> {{$product->productId}}</td>
-                                        <td> {{$product->productName}}</td>
-                                        <td> {{$product->productPrice}}</td>
-                                        <td> {{$product->productImg}}</td>
+                                    <tr>
+                                        <td>{{$product->productId}}</td>
+                                        <td>{{$product->productName}}</td>
+                                        <td>{{$product->productPrice}}</td>
+                                        <td><img src="{{$product->productImg}}" alt="" style="border-radius: 10%" width="100px" height="100px"  ></td> 
                                         <td>
-                                            <a href="{{url('edit')}}"  class="btn btn-outline-danger rounded-pill" value="Update" title="Edit this product"></i>Edit</a> &nbsp;
-                                            <a href="{{url('delete/'.$product->productId)}}" class="btn btn-outline-danger rounded-pill" value="Delete" title="Delete this product"><i class="fa-solid fa-trash-can">Delete</i></a>
+                                            <a href="{{url('admin/edit/'.$product->productId)}}" title="Edit this product"><i class="fa-solid fa-pen-to-square"></i>Edit</a> &nbsp;
+                                            <a href="{{url('admin/delete/'.$product->productId)}}" title="Delete this product"><i class="fa-solid fa-trash-can"></i>Delete</a>
                                         </td>
-                                </tr>
+                                    </tr>
                                 @endforeach
-                            </tbody>                                   
+                            </tbody>                                
                         </table>
                     </div>
                 </div>

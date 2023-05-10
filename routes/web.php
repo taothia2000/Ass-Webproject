@@ -24,8 +24,12 @@ Route::get('index', [ProductController::class,'index']) -> name('home');
 
 //ADMIN
 Route::get('admin/index', [AdminController::class, 'index']) -> name('home');
-Route::get('admin/delete', [AdminController::class, 'index']) -> name('delete');
-Route::get('edit', [AdminController::class, 'edit']) -> name('edit');
+
+Route::get('admin/add', [AdminController::class, 'add'])->name('add');
+Route::post('admin/save', [AdminController::class, 'save'])->name('save');
+Route::get('admin/edit/{id}', [AdminController::class, 'edit'])->name('edit');
+Route::post('admin/update', [AdminController::class, 'update'])->name('update');
+Route::get('admin/delete/{id}',[AdminController::class, 'delete'])->name('delete');
 
 //CART
 Route::get('cart', [CartController::class,'cart']) -> name('cart');
