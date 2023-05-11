@@ -59,11 +59,11 @@
                         </div>
                     </div>
                     <div class="navbar-nav w-100">
-                        @livewireStyles
+
                         <a href="product" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Products</a>
                         <a href=" "class="nav-item nav-link"><i class="fa fa-th me-2"></i>Orders</a>
                         <a href="{{ route('customer') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Customers</a>
-                        @livewireScripts
+
                     </div>
                 </nav>
             </div>
@@ -100,33 +100,32 @@
             <!-- Navbar End -->
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Customers Table</h4>
+                        <h4 class="card-title">Products Table</h4>
+                        <a type="submit" href="{{ url('admin/add')}}" class="btn btn-default add-to-cart"></i>Add product</a>
 
                         <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th> ID </th>
                                     <th> name </th>
-                                    <th> Email </th>
-                                    <th> Role </th>
-                                    <th> Password</th>
+                                    <th> Price </th>
+                                    <th> Image </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($users as $user)
-                                <tr>
-                                    <td>{{$user->userID}}</td>
-                                    <td>{{$user->userName}}</td>
-                                    <td>{{$user->userEmail}}</td>
-                                    <td>{{$user->role}}</td>
-                                    <td>{{$user->userPassword}}</td>
-                                    <td>
-                                        <a href="#" title="Edit this product"><i class="fa-solid fa-pen-to-square"></i></a>
-                                        <a href="#" title="Delete this product"><i class="fa-solid fa-trash-can"></i></a>
-                                    </td>
-                                </tr>
+                                @foreach ($products as $product)
+                                    <tr>
+                                        <td>{{$product->productId}}</td>
+                                        <td>{{$product->productName}}</td>
+                                        <td>{{$product->productPrice}}</td>
+                                        <td><img src="{{url('pro_image/'.$product->productImg)}}" alt="" style="border-radius: 10%" width="100px" height="100px"  ></td> 
+                                        <td>
+                                            <a href="{{url('admin/edit/'.$product->productId)}}" title="Edit this product"><i class="fa-solid fa-pen-to-square"></i>Edit</a> &nbsp;
+                                            <a href="{{url('admin/delete/'.$product->productId)}}" title="Delete this product"><i class="fa-solid fa-trash-can"></i>Delete</a>
+                                        </td>
+                                    </tr>
                                 @endforeach
-                            </tbody>                                   
+                            </tbody>                                
                         </table>
                     </div>
                 </div>

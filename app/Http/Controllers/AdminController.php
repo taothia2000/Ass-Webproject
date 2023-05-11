@@ -35,18 +35,7 @@ class AdminController extends Controller
             return redirect('index');
         }
     }
-    public function edit()
-    {
-        $products = Product::all();
-        return view ('admin/edit', compact('products'));
-    }
 
-
-    public function delete()
-    {
-        $products = Product::all();
-        return view ('admin/index', compact('products'));
-    }
    
     public function customerAd()
     {
@@ -57,4 +46,13 @@ class AdminController extends Controller
         }
         return view ('admin/customer', compact('data','users'));
     }
+
+   
+
+    
+
+ 
+
+
+
 }

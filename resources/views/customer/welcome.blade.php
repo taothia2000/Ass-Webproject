@@ -190,9 +190,9 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
-											<img src="{{ $product->productImg }}" width = "200" alt="">
+											<img src="{{url('pro_image/'.$product->productImg)}}" width = "200" alt="">
 											<h2>{{$product->productName}}</h2>
-											<p>{{$product->productPrice}}</p>
+											<p>${{$product->productPrice}}</p>
 											<a href="{{ url('add-to-cart/' .$product->productId)}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>										
 								</div>
@@ -226,7 +226,7 @@
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="companyinfo">
-							<h2><span>e</span>-shopper</h2>
+							<h2><span>C</span>-hoco World</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
 						</div>
 					</div>
