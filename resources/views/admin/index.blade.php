@@ -118,7 +118,7 @@
                                         <td>{{$product->productId}}</td>
                                         <td>{{$product->productName}}</td>
                                         <td>{{$product->productPrice}}</td>
-                                        <td><img src="{{$product->productImg}}" alt="" style="border-radius: 10%" width="100px" height="100px"  ></td> 
+                                        <td><img src="{{url('pro_image/'.$product->productImg)}}" alt="" style="border-radius: 10%" width="100px" height="100px"  ></td> 
                                         <td>
                                             <a href="{{url('admin/edit/'.$product->productId)}}" title="Edit this product"><i class="fa-solid fa-pen-to-square"></i>Edit</a> &nbsp;
                                             <a href="{{url('admin/delete/'.$product->productId)}}" title="Delete this product"><i class="fa-solid fa-trash-can"></i>Delete</a>

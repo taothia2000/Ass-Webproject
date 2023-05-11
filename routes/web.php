@@ -36,11 +36,11 @@ Route::get('admin/index', [AdminController::class, 'index']) -> name('home');
 
 
 //CRUD PRODUCTS
-Route::get('admin/add', [AdminController::class, 'add'])->name('add');
-Route::post('admin/save', [AdminController::class, 'save'])->name('save');
-Route::get('admin/edit/{id}', [AdminController::class, 'edit'])->name('edit');
-Route::post('admin/update', [AdminController::class, 'update'])->name('update');
-Route::get('admin/delete/{id}',[AdminController::class, 'delete'])->name('delete');
+Route::get('admin/add', [ProductController::class, 'add'])->name('add');
+Route::post('admin/save', [ProductController::class, 'save'])->name('save');
+Route::get('admin/edit/{id}', [ProductController::class, 'edit'])->name('edit');
+Route::post('admin/update', [ProductController::class, 'update'])->name('update');
+Route::get('admin/delete/{id}',[ProductController::class, 'delete'])->name('delete');
 
 //CART
 Route::get('cart', [CartController::class,'cart']) -> name('cart');

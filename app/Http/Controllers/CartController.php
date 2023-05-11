@@ -70,7 +70,7 @@ class CartController extends Controller
         $productId = $request->input('productId');
 
         // Insert product and cart information into the 'orders' table
-        $product = DB::table('products')->find($productId); // Replace 'products' table name with your own
+        $product = DB::table('products')->find($productId); 
 
       
         DB::table('order_detail')->insert(
