@@ -30,17 +30,9 @@ Route::get('index', [ProductController::class,'index']) -> name('home');
 Route::get('admin/index', [AdminController::class, 'index']) -> name('adminIndex');
 Route::get('adminPage', [AdminController::class, 'adminPage']) -> name('adminPage');
 Route::get('logOut', [AdminController::class,'logOut'])->name('logOut');
-
+Route::get('admin/delete', [AdminController::class, 'index']) -> name('delete');
+Route::get('edit', [AdminController::class, 'edit']) -> name('edit');
 Route::get('admin/customer',[AdminController::class,'customerAd'])->name('customer');
-Route::get('admin/index', [AdminController::class, 'index']) -> name('home');
-
-
-//CRUD PRODUCTS
-Route::get('admin/add', [ProductController::class, 'add'])->name('add');
-Route::post('admin/save', [ProductController::class, 'save'])->name('save');
-Route::get('admin/edit/{id}', [ProductController::class, 'edit'])->name('edit');
-Route::post('admin/update', [ProductController::class, 'update'])->name('update');
-Route::get('admin/delete/{id}',[ProductController::class, 'delete'])->name('delete');
 
 //CART
 Route::get('cart', [CartController::class,'cart']) -> name('cart');
@@ -57,6 +49,5 @@ Route::get('logOut', [CustomerController::class,'logOut'])->name('logOut');
 //Customer
 Route::get('Customer', [CustomerController::class,'Customer'])->name('Customer');
 Route::post('Customer_data',[CustomerController::class,'Customer_data'])->name('Customer_data');
-
 
 
