@@ -30,9 +30,8 @@ Route::get('index', [ProductController::class,'index']) -> name('home');
 Route::get('admin/index', [AdminController::class, 'index']) -> name('adminIndex');
 Route::get('adminPage', [AdminController::class, 'adminPage']) -> name('adminPage');
 Route::get('logOut', [AdminController::class,'logOut'])->name('logOut');
-
 Route::get('admin/customer',[AdminController::class,'customerAd'])->name('customer');
-Route::get('admin/index', [AdminController::class, 'index']) -> name('home');
+
 
 
 //CRUD PRODUCTS
