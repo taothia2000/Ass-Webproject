@@ -24,21 +24,28 @@
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 	
 <body>
-    <header id="header"><!--header-->	
+	<header id="header"><!--header-->	
 		<div class="header-middle"><!--header-top-->
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-4"> 
 						<div class="logo pull-left">
-							<a href="{{('')}}"><img src="{{('../public/customer/frontend/images/logo.jpg')}}" alt="" /></a>        <!--Để logo shop-->
+							<a href="{{('index')}}"><img src="{{('../public/customer/frontend/images/logo.jpg')}}" alt="" /></a>        <!--Để logo shop-->
 						</div>
 					</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
-							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+							<ul class="nav navbar-nav">				
+								@if(Session::has('Email'))
+								<li><a href="{{ route('home') }}">Welcome, {{ Session::get('Name') }}</a></li>
+								@endif								
+								@if (Session::has('Email'))	
+									<li><a href="{{ route('logOut') }}"><i class="fa fa-lock"></i>Log out</a> </li>
+								@else
+    								<li><a href="{{ route('login') }}"><i class="fa fa-lock"></i>Log in</a> </li>
+								
+								@endif
+								@csrf
 							</ul>
 						</div>
 					</div>
@@ -60,7 +67,7 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="{{('')}}" class="active">Home</a></li>
+								<li><a href="{{('index')}}" class="active">Home</a></li>
 								<li class="dropdown"><a href="#">Products<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html">White chocolate</a></li>
@@ -119,7 +126,7 @@
 											<h4><a href="">{{ $details['name']}}</a></h4>
 										</td>
 										<td class="cart_price">
-											<p>{{ $details['price']}}</p>
+											<p>${{ $details['price']}}</p>
 										</td>
 										<td class="cart_quantity">
 											<div class="cart_quantity_button">
@@ -157,8 +164,10 @@
 										</span>
 									</li>
 								</ul>
-									<a class="btn btn-default update" href="">Update</a>
-									<a class="btn btn-default check_out" href="">Buy now</a>
+								<form action="">
+									@csrf
+									<button type="submit" class="btn btn-default check_out" href="">Buy now</button>
+								</form>
 							</div>
 						</div>
 					</div>
@@ -171,7 +180,7 @@
 						<div class="row">
 							<div class="col-sm-2">
 								<div class="companyinfo">
-									<h2><span>e</span>-shopper</h2>
+									<h2><span>C</span>-ho World</h2>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
 								</div>
 							</div>

@@ -35,10 +35,20 @@
 					</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
-							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+							<ul class="nav navbar-nav">	
+								{{-- //link to cart			 --}}
+								<li><a href="{{ route('cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								{{-- //Login && LogOut			 --}}
+								@if(Session::has('Email'))
+								<li><a>Welcome, {{ Session::get('Name') }}</a></li>
+								@endif								
+								@if (Session::has('Email'))	
+									<li><a href="{{ route('logOut') }}"><i class="fa fa-lock"></i>Log out</a> </li>
+								@else
+    								<li><a href="{{ route('login') }}"><i class="fa fa-lock"></i>Log in</a> </li>
+								
+								@endif
+								@csrf
 							</ul>
 						</div>
 					</div>
@@ -180,9 +190,9 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
-											<img src="{{ $product->productImg }}" width = "200" alt="">
+											<img src="{{url('pro_image/'.$product->productImg)}}" width = "200" alt="">
 											<h2>{{$product->productName}}</h2>
-											<p>{{$product->productPrice}}</p>
+											<p>${{$product->productPrice}}</p>
 											<a href="{{ url('add-to-cart/' .$product->productId)}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>										
 								</div>
@@ -216,7 +226,7 @@
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="companyinfo">
-							<h2><span>e</span>-shopper</h2>
+							<h2><span>C</span>-hoco World</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
 						</div>
 					</div>

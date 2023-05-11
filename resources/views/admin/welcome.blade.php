@@ -6,18 +6,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>ChocoWorld</title>
-    <link href="<?php echo e(('../public/customer/frontend/css/bootstrap.min.css')); ?>" rel="stylesheet" >
-    <link href="<?php echo e(('../public/customer/frontend/css/font-awesome.min.css')); ?>" rel="stylesheet">
-    <link href="<?php echo e(('../public/customer/frontend/css/prettyPhoto.css')); ?>" rel="stylesheet">
-    <link href="<?php echo e(('../public/customer/frontend/css/price-range.css')); ?>" rel="stylesheet">
-    <link href="<?php echo e(('../public/customer/frontend/css/animate.css')); ?>" rel="stylesheet">
-	<link href="<?php echo e(('../public/customer/frontend/css/main.css')); ?>" rel="stylesheet">
-	<link href="<?php echo e(('../public/customer/frontend/css/responsive.css')); ?>" rel="stylesheet">
+    <link href="{{('../public/customer/frontend/css/bootstrap.min.css')}}" rel="stylesheet" >
+    <link href="{{('../public/customer/frontend/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{('../public/customer/frontend/css/prettyPhoto.css')}}" rel="stylesheet">
+    <link href="{{('../public/customer/frontend/css/price-range.css')}}" rel="stylesheet">
+    <link href="{{('../public/customer/frontend/css/animate.css')}}" rel="stylesheet">
+	<link href="{{('../public/customer/frontend/css/main.css')}}" rel="stylesheet">
+	<link href="{{('../public/customer/frontend/css/responsive.css')}}" rel="stylesheet">
     <!--[if lt
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="<?php echo e(('../public/customer/frontend/images/favicon.ico')); ?>">
+    <link rel="shortcut icon" href="{{('../public/customer/frontend/images/favicon.ico')}}">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
@@ -30,15 +30,25 @@
 				<div class="row">
 					<div class="col-sm-4"> 
 						<div class="logo pull-left">
-							<a href="<?php echo e(('')); ?>"><img src="<?php echo e(('../public/customer/frontend/images/logo.jpg')); ?>" alt="" /></a>        <!--Để logo shop-->
+							<a href="{{('')}}"><img src="{{('../public/customer/frontend/images/logo.jpg')}}" alt="" /></a>        <!--Để logo shop-->
 						</div>
 					</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
-							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+							<ul class="nav navbar-nav">	
+								 <!-- link to cart			  -->
+								<li><a href="{{ route('cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<!-- Login && LogOut			 -->
+								@if(Session::has('Email'))
+								<li><a href="{{ route('adminIndex') }}">Welcome, {{ Session::get('Name') }}</a></li>
+								@endif								
+								@if (Session::has('Email'))	
+									<li><a href="{{ route('logOut') }}"><i class="fa fa-lock"></i>Log out</a> </li>
+								@else
+    								<li><a href="{{ route('login') }}"><i class="fa fa-lock"></i>Log in</a> </li>
+								
+								@endif
+								@csrf
 							</ul>
 						</div>
 					</div>
@@ -60,7 +70,7 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="<?php echo e(('')); ?>" class="active">Home</a></li>
+								<li><a href="{{('')}}" class="active">Home</a></li>
 								<li class="dropdown"><a href="#">Products<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html">White chocolate</a></li>
@@ -97,19 +107,19 @@
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-6">
-									<img src="<?php echo e(('../public/customer/frontend/images/girl1.jpg')); ?>" class="girl img-responsive" alt="" />
+									<img src="{{('../public/customer/frontend/images/girl1.jpg')}}" class="girl img-responsive" alt="" />
 								</div>
 							</div>
 
 							<div class="item">
 								<div class="col-sm-6">
-									<img src="<?php echo e(('../public/customer/frontend/images/girl2.jpg')); ?>" class="girl img-responsive" alt="" />
+									<img src="{{('../public/customer/frontend/images/girl2.jpg')}}" class="girl img-responsive" alt="" />
 								</div>
 							</div>
 							
 							<div class="item">
 								<div class="col-sm-6">
-									<img src="<?php echo e(('../public/customer/frontend/images/girl3.jpg')); ?>" class="girl img-responsive" alt="" />
+									<img src="{{('../public/customer/frontend/images/girl3.jpg')}}" class="girl img-responsive" alt="" />
 								</div>
 							</div>
 						</div>
@@ -175,15 +185,15 @@
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
 
-						<?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+						@foreach($products as $product)
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
-											<img src="<?php echo e($product->productImg); ?>" width = "200" alt="">
-											<h2><?php echo e($product->productName); ?></h2>
-											<p><?php echo e($product->productPrice); ?></p>
-											<a href="<?php echo e(url('add-to-cart/' .$product->productId)); ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											<img src="{{ $product->productImg }}" width = "200" alt="">
+											<h2>{{$product->productName}}</h2>
+											<p>{{$product->productPrice}}</p>
+											<a href="{{ url('add-to-cart/' .$product->productId)}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>										
 								</div>
 								<div class="choose">
@@ -194,7 +204,7 @@
 								</div>
 							</div>
 						</div>
-						<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+						@endforeach
 					</div><!--features_items-->				
 				</div>
 			</div>
@@ -216,13 +226,13 @@
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="companyinfo">
-							<h2><span>e</span>-shopper</h2>
+							<h2><span>C</span>-hoco World</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="address">
-							<img src="<?php echo e(('frontend/images/map.png')); ?>" alt="" />
+							<img src="{{('frontend/images/map.png')}}" alt="" />
 							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
 						</div>
 					</div>
@@ -317,13 +327,12 @@
 		</div>
 	</footer><!--/Footer-->
 	
-    <script src="<?php echo e(('../public/customer/frontend/js/jquery.js')); ?>"></script>
-	<script src="<?php echo e(('../public/customer/frontend/js/bootstrap.min.js')); ?>"></script>
-	<script src="<?php echo e(('../public/customer/frontend/js/jquery.scrollUp.min.js')); ?>"></script>
-	<script src="<?php echo e(('../public/customer/frontend/js/price-range.js')); ?>"></script>
-    <script src="<?php echo e(('../public/customer/frontend/js/jquery.prettyPhoto.js')); ?>"></script>
-    <script src="<?php echo e(('../public/customer/frontend/js/main.js')); ?>"></script>
+    <script src="{{('../public/customer/frontend/js/jquery.js')}}"></script>
+	<script src="{{('../public/customer/frontend/js/bootstrap.min.js')}}"></script>
+	<script src="{{('../public/customer/frontend/js/jquery.scrollUp.min.js')}}"></script>
+	<script src="{{('../public/customer/frontend/js/price-range.js')}}"></script>
+    <script src="{{('../public/customer/frontend/js/jquery.prettyPhoto.js')}}"></script>
+    <script src="{{('../public/customer/frontend/js/main.js')}}"></script>
 </body>
 </html>
 
-<?php /**PATH C:\xampp\htdocs\choco\resources\views/customer/welcome.blade.php ENDPATH**/ ?>

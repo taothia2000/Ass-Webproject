@@ -1,67 +1,72 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Cart;
+use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
 {
     public function index()
     {
         $products = Product::all();
-
-        return view ('customer/welcome', compact('products'));
-    }
-
-    public function cart()
-    {
- 
-        //tính total
-        $cart = session()->get('cart');
-        $subtotals = [];  
-        foreach($cart as $id => $details){
-            $subtotals[$id] = $details['price'] * $details['quantity'];
+        $data = array();
+        if(Session::has('Email')){
+            $data = User::where('userEmail','=', Session::get('Email'))->first();
         }
-        $total = array_sum($subtotals);
-
-        //view cart
-        return view ('customer/cart', compact('subtotals', 'total'));
-
-    }
-
-    public function addtocart($id)
-    {
-        $product = Product::find($id);
-        $cart = session() -> get('cart');
-
-        //lưu thông tin product 
-        $cart[$id] = [     
-            "id" => $product->productId,                     
-            "name" => $product->productName,
-            "quantity" => 1,
-            "price" => $product->productPrice,
-            "img" => $product->productImg,
-        ];
-
-        //đưa product vào giỏ hàng
-        session() -> put('cart', $cart);      
-        return redirect() -> back() -> with('success', 'Product added to cart successfully!');
+        return view ('customer/welcome', compact('products','data'));
     }
 
 
-    public function remove($id)
+    //                                      CRUD PRODUCTS
+
+    public function add()
     {
-        $cart = session()->get('cart');
+        $products = Product::all();
+        return view('admin/add', compact('products'));
+    }
+
+    public function save(Request $request)
+    {
+        $pro = new Product();
+        $pro->productId = $request->id;
+        $pro->productName = $request->name;
+        $pro->productPrice = $request->price;
+        $pro->productImg = $request->image;
+        $pro->save();
+        return redirect()->back()->with('success','Product added successfully!');
+    }
+
+    public function edit($id)
+    {
+        
+        $data = Product::where('productId','=',$id)->first();
+        $products = Product::get();
+        return view('admin/edit',compact('data','products'));
+        
+    }
+
+    public function update(Request $request)
+    {
+        Product::where('productId', '=', $request->id)->update([
+            'productName' => $request->name,
+            'productPrice' => $request->price,
+            'productImg' => $request->image,
+
+        ]);
+        return redirect()->back()->with('success','Product update successfully!');
+    }
+
+    public function delete($id)
+    {
+        Product::where('productId', '=',$id)->delete();
+        return redirect()->back()->with('success','Product deleted successfully!');
+    }
+
+
+
+
     
-        if(isset($cart[$id])) {
-            unset($cart[$id]);
-            session()->put('cart', $cart);
-        }
-        return redirect()->back()->with('success', 'Product removed successfully from cart.');
-    }
-
-
-
 }
