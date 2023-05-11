@@ -13,7 +13,11 @@ class AdminController extends Controller
     {
         $users = User::all();
         $products = Product::all();
-        return view ('admin/index', compact('products', 'users'));
+        $data = array();
+        if(Session::has('Email')){
+            $data = User::where('userEmail','=', Session::get('Email'))->first();
+        }
+        return view ('admin/index', compact('products', 'users','data'));
     }
 
 
