@@ -60,7 +60,7 @@
                     </div>
                     <div class="navbar-nav w-100">
                         @livewireStyles
-                        <a href="product" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Products</a>
+                        <a href="{{url('admin/index')}}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Products</a>
                         <a href="order "class="nav-item nav-link"><i class="fa fa-th me-2"></i>Orders</a>
                         <a href="customer" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Customers</a>
                         @livewireScripts
@@ -119,8 +119,7 @@
                                     <td>{{$user->userEmail}}</td>
                                     <td>{{$user->role}}</td>
                                     <td>
-                                        <a href="#" title="Edit this product"><i class="fa-solid fa-pen-to-square"></i></a>
-                                        <a href="#" title="Delete this product"><i class="fa-solid fa-trash-can"></i></a>
+                                        <a href="{{url('admin/delete/'.$user->userID)}}" title="Delete this user"><i class="fa-solid fa-trash-can"></i>Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach

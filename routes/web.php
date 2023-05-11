@@ -41,6 +41,11 @@ Route::get('admin/edit/{id}', [ProductController::class, 'edit'])->name('edit');
 Route::post('admin/update', [ProductController::class, 'update'])->name('update');
 Route::get('admin/delete/{id}',[ProductController::class, 'delete'])->name('delete');
 
+//CRUD CUSTOMERS
+Route::get('admin/delete/{id}',[CustomerController::class, 'delete'])->name('delete');
+
+
+
 //CART
 Route::get('cart', [CartController::class,'cart']) -> name('cart');
 Route::get('add-to-cart/{id}', [CartController::class,'addtocart']);
