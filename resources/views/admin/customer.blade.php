@@ -60,9 +60,9 @@
                     </div>
                     <div class="navbar-nav w-100">
                         @livewireStyles
-                        <a href="product" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Products</a>
+                        <a href="{{url('admin/index')}}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Products</a>
                         <a href="order "class="nav-item nav-link"><i class="fa fa-th me-2"></i>Orders</a>
-                        <a href="customer" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Customers</a>
+                        <a href="{{ route('customer') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Customers</a>
                         @livewireScripts
                     </div>
                 </nav>
