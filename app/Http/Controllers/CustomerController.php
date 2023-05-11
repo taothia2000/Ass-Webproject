@@ -63,5 +63,15 @@ class CustomerController extends Controller
             return redirect('index');
         }
     }
+
+
+
+
+    //DELETE CUSTOMERS
+    public function delete($id)
+    {
+        User::where('userID', '=',$id)->delete();
+        return redirect()->back()->with('success','User deleted successfully!');
+    }
     
 }

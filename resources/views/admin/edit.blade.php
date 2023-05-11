@@ -21,16 +21,19 @@
 
         <form action="{{route('update')}}" method="POST">
             @csrf
+            
           <div class="mb-3 mt-3">
             <label for="id">Product ID:</label>
             <input type="text" class="form-control" id="id" readonly
                 value = "{{$data->productId}}" name="id">
           </div>
+
           <div class="mb-3 mt-3">
             <label for="name">Name:</label>
             <input type="text" class="form-control" id="name"
                 value = "{{$data->productName}}" name="name">
           </div>
+
           <div class="mb-3 mt-3">
             <label for="price">Price:</label>
             <input type="number" class="form-control" id="price"

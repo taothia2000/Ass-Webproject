@@ -36,9 +36,9 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">	
-								{{-- //link to cart			 --}}
+								 <!-- link to cart			  -->
 								<li><a href="{{ route('cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								{{-- //Login && LogOut			 --}}
+								<!-- Login && LogOut			 -->
 								@if(Session::has('Email'))
 								<li><a href="{{ route('adminIndex') }}">Welcome, {{ Session::get('Name') }}</a></li>
 								@endif								

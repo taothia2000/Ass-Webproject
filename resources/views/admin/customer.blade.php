@@ -119,8 +119,7 @@
                                     <td>{{$user->userEmail}}</td>
                                     <td>{{$user->role}}</td>
                                     <td>
-                                        <a href="#" title="Edit this product"><i class="fa-solid fa-pen-to-square"></i></a>
-                                        <a href="#" title="Delete this product"><i class="fa-solid fa-trash-can"></i></a>
+                                        <a href="{{url('admin/delete/'.$user->userID)}}" title="Delete this user"><i class="fa-solid fa-trash-can"></i>Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach
